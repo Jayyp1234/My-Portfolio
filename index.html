@@ -93,26 +93,25 @@
 		</section>
 		<!-- Pop Up contact page-->
 		<div id="id01" class="modal" style="display:none">
-		  <form class="modal-content animate" action="">
+		  <form class="modal-content animate" id="popupformintake" action='contact -form.php' method="POST">
 		  	<h1 style="text-align: center;font-family: 'Open Sans Regular';color: white;">CONTACT</h1> <br>
 		  	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 		  	<div class="modal-content-CONAT">
-					<input type="text" name="client_name" placeholder="Name"  id="firstName" >
+					<input type="text" name="client_name" placeholder="Name"  id="firstName" required>
 					<div> 
 						<span style="" class="form-error"></span> 
 					</div>
-					<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name">
+					<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name" required>
 					<div> 
 						<span class="form-error">    </span>
 					</div>
 					<input type="text" name="client_subject" placeholder="Subject" id="projectName" class="project-name"><br><div><span class="form-error-msg"></span></div>
-					<textarea class="description" name="message"  placeholder="Type your Message here" id="projectDescription" class="project-description"></textarea>
+					<textarea class="description" name="message"  placeholder="Type your Message here" id="projectDescription" class="project-description" required></textarea>
 					<div><span class="form-error-msg">  </span></div>
 					<input type="submit" value="Submit" name="ContactUS" class="submit-response">
 				</div>
 		  </form>
 		</div>
-
 		<!-- Skills Section -->
 		<section class="skills" id="skills">
 			<h1>SKILLS</h1>
@@ -397,11 +396,12 @@
         <div> <p align="center" style="font-family: 'Open Sans Bold'">Designed from Scratch By <a href="index.html" style="color: var(--deepblue--)">Okeke Johnpaul</a>.</p></div>
 
 	</footer>
-	<div id="preloader" style="z-index: 9999999999999"></div>
-
+	<div id="preloader"></div>
+	
 </body>
 <script type="text/javascript" src="assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src="jquery.min.js"></script>-->
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".typed").html(" ");
