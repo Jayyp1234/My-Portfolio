@@ -1,16 +1,19 @@
 @font-face {
     font-family: Open Sans Regular;
-    src: url(../../fonts/OpenSans-Regular.ttf)
+    src: url(../../fonts/OpenSans-Regular.ttf);
+    font-display:swap;
 }
 
 @font-face {
     font-family: Open Sans SemiBold;
-    src: url(../../fonts/OpenSans-SemiBold.ttf)
+    src: url(../../fonts/OpenSans-SemiBold.ttf);
+    font-display:swap;
 }
 
 @font-face {
     font-family: Open Sans Bold;
-    src: url(../../fonts/OpenSans-Bold.ttf)
+    src: url(../../fonts/OpenSans-Bold.ttf);
+    font-display:swap;
 }
 
 /* Sass Decoration to assign color values*/
@@ -680,7 +683,7 @@ progress[value]::-webkit-progress-value {
 
     .Certificates-content ul li.fourteen-child::after {
         position: relative;
-        top: 435px;
+        top: 0;
         background-color: var(--deepblue--);
         box-shadow: 0 0 0 1px inset;
         padding: 3px;
@@ -692,7 +695,7 @@ progress[value]::-webkit-progress-value {
 
     .Certificates-content ul li.fifteenth-child::after {
         position: relative;
-        top: 435px;
+        top: 0;
         background-color: var(--deepblue--);
         box-shadow: 0 0 0 1px inset;
         padding: 3px;
@@ -709,14 +712,6 @@ progress[value]::-webkit-progress-value {
         width: calc(90vw - 85px);
         height: 350px;
     }
-
-    .Certificates-content ul li.fourteen-child::after {
-        top: 350px;
-    }
-
-    .Certificates-content ul li.fifteenth-child::after {
-        top: 350px;
-    }
 }
 
 @media all and (max-width: 575px) {
@@ -726,13 +721,7 @@ progress[value]::-webkit-progress-value {
         height: 280px;
     }
 
-    .Certificates-content ul li.fourteen-child::after {
-        top: 280px;
-    }
 
-    .Certificates-content ul li.fifteenth-child::after {
-        top: 280px;
-    }
 }
 
 @media all and (max-width: 468px) {
@@ -741,14 +730,6 @@ progress[value]::-webkit-progress-value {
         margin-bottom: 5px;
         width: calc(90vw - 82px);
         height: 200px;
-    }
-
-    .Certificates-content ul li.fourteen-child::after {
-        top: 200px;
-    }
-
-    .Certificates-content ul li.fifteenth-child::after {
-        top: 200px;
     }
 }
 
@@ -1274,16 +1255,28 @@ footer .social-links i:hover {
     height: auto;
 }
 }
+.modal{
+    background-color: rgba(0 , 0, 0 , 0.8);
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 .menu-bar-open, .menu-bar-close {
     z-index: 999999;
 }
 .modal-content-CONAT{
-    width:90%;
+    width:80%;
     display:block;
-    margin:auto}
+    margin:auto;
+    background-color: black;
+    padding: 20px;
+}
 .modal-content #firstName,.modal-content #lastName{
     width:100%;
-    margin-bottom:0
+    margin-bottom:0;
     }
 .modal-content-CONAT div{
     color:red;margin-bottom:15px
@@ -1291,7 +1284,7 @@ footer .social-links i:hover {
 .close{
     position:absolute;
     right:15%;margin-top:10px;
-    color:#000;font-size:35px;font-weight:700
+    color:white;font-size:35px;font-weight:700
     }
 .close:focus,.close:hover{
     color:var(--deepblue--);
