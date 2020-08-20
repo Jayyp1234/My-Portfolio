@@ -1,6 +1,3 @@
-<?php 
-	include 'contact-form.php';
- ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,19 +94,19 @@
 		</section>
 		<!-- Pop Up contact page-->
 		<div id="id01" class="modal" style="display:none">
-		  <form class="modal-content animate" id="popupformintake" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST" >
+		  <form class="modal-content animate" id="popupformintake" action='POST' data-netlify="true" >
 		  	<h1 style="text-align: center;font-family: 'Open Sans Regular';color: white;">CONTACT</h1> <br>
 		  	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 		  	<div class="modal-content-CONAT">
-					<input type="text" name="client_name" placeholder="Name"  id="firstName" required>
+					<input type="text" name="name" placeholder="Name"  id="firstName" required>
 					<div> 
 						<span style="" class="form-error"></span> 
 					</div>
-					<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name" required>
+					<input type="text" style="margin-left: auto;" name="email" placeholder="Email" id="lastName"  class="last-name" required>
 					<div> 
 						<span class="form-error">    </span>
 					</div>
-					<input type="text" name="client_subject" placeholder="Subject" id="projectName" class="project-name"><br><div><span class="form-error-msg"></span></div>
+					<input type="text" name="subject" placeholder="Subject" id="projectName" class="project-name"><br><div><span class="form-error-msg"></span></div>
 					<textarea class="description" name="message"  placeholder="Type your Message here" id="projectDescription" class="project-description" required></textarea>
 					<div><span class="form-error-msg">  </span></div>
 					<input type="submit" value="Submit" name="ContactUS" class="submit-response">
@@ -371,17 +368,17 @@
 					</div>
 				</div>
 				<div class="ContactMessage">
-					<div class="form-success">
-						<span > <?php echo $success; ?> </span>
-						</div>
-					<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			
+				
+	
+					<form action="POST" data-netlify="true" >
 						<div class="name-flex">
-							<input type="text" name="client_name" placeholder="Name"  id="firstName" class="first-name" ><br>
-							<span style="" class="form-error"> <?php echo $client_name_error; ?> </span><br>
-							<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name"><br>
-							<span class="form-error"> <?php echo $client_email_error; ?> </span>
+							<input type="text" name="name" placeholder="Name"  id="firstName" class="first-name" ><br>
+							<span style="" class="form-error"> </span><br>
+							<input type="text" style="margin-left: auto;" name="email" placeholder="Email" id="lastName"  class="last-name"><br>
+							<span class="form-error"> </span>
 						</div>
-						<input type="text" name="client_subject" placeholder="Subject" id="projectName" class="project-name"> <br><span class="form-error-msg"><?php echo $client_subject_error; ?></span>
+						<input type="text" name="subject" placeholder="Subject" id="projectName" class="project-name"> <br><span class="form-error-msg"><?php echo $client_subject_error; ?></span>
 						<textarea class="description" name="message"   placeholder="Type your Message here" id="projectDescription" class="project-description"></textarea><span class="form-error-msg"><?php echo $message_error; ?> </span>
 						<input type="submit" value="Submit" name="ContactUS" class="submit-response">
 					</form>
