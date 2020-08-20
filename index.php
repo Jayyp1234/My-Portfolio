@@ -1,3 +1,7 @@
+<?php 
+	include 'contact-form.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,7 +97,7 @@
 		</section>
 		<!-- Pop Up contact page-->
 		<div id="id01" class="modal" style="display:none">
-		  <form class="modal-content animate" id="popupformintake" action='contact -form.php' method="POST">
+		  <form class="modal-content animate" id="popupformintake" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST">
 		  	<h1 style="text-align: center;font-family: 'Open Sans Regular';color: white;">CONTACT</h1> <br>
 		  	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 		  	<div class="modal-content-CONAT">
@@ -367,22 +371,24 @@
 					</div>
 				</div>
 				<div class="ContactMessage">
-				<form method="POST" action="/index.php">
-					<div class="name-flex">
-						<input type="text" name="client_name" placeholder="Name"  id="firstName" class="first-name"><br>
-						<div><span style="" class="form-error">  </span></div>
-						<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name"><br>
-						<div><span class="form-error">    </span></div>
-					</div>
-					<input type="text" name="client_subject" placeholder="Subject" id="projectName" class="project-name"><br><div><span class="form-error-msg"></span></div>
-					<textarea class="description" name="message"  placeholder="Type your Message here" id="projectDescription" class="project-description"></textarea>
-					<div><span class="form-error-msg">  </span></div>
-					<input type="submit" value="Submit" name="ContactUS" class="submit-response">
-			</form>
+					<div class="form-success">
+						<span > <?php echo $success; ?> </span>
+						</div>
+					<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+						<div class="name-flex">
+							<input type="text" name="client_name" placeholder="Name"  id="firstName" class="first-name" ><br>
+							<span style="" class="form-error"> <?php echo $client_name_error; ?> </span><br>
+							<input type="text" style="margin-left: auto;" name="client_email" placeholder="Email" id="lastName"  class="last-name"><br>
+							<span class="form-error"> <?php echo $client_email_error; ?> </span>
+						</div>
+						<input type="text" name="client_subject" placeholder="Subject" id="projectName" class="project-name"> <br><span class="form-error-msg"><?php echo $client_subject_error; ?></span>
+						<textarea class="description" name="message"   placeholder="Type your Message here" id="projectDescription" class="project-description"></textarea><span class="form-error-msg"><?php echo $message_error; ?> </span>
+						<input type="submit" value="Submit" name="ContactUS" class="submit-response">
+					</form>
 				</div>
 			</div>
 		</section>
-	</main>
+	</main><br><br><br><br><br>
 	<footer>
 		<h1>Okeke Johnpaul</h1>
 		<div class="social-links">
@@ -393,15 +399,17 @@
 			<a href="https://www.linkedin.com/in/okeke-johnpaul-659685173" class="linkedin"><i class="icon-linkedin"></i></a>
 		</div>
         <div> <p align="center" style="font-family: 'Open Sans Bold'">All rights reserved.</p></div>
-        <div> <p align="center" style="font-family: 'Open Sans Bold'">Designed from Scratch By <a href="index.html" style="color: var(--deepblue--)">Okeke Johnpaul</a>.</p></div>
+        <div> <p align="center" style="font-family: 'Open Sans Bold'">Designed from Scratch By <a href="index.php" style="color: var(--deepblue--)">Okeke Johnpaul</a>.</p></div>
 
 	</footer>
 	<div id="preloader"></div>
 	
 </body>
 <script type="text/javascript" src="assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
 <!--<script type="text/javascript" src="jquery.min.js"></script>-->
+
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".typed").html(" ");
@@ -436,6 +444,7 @@
 	  }
 	  setTimeout(typeWriter, speed);
 	}
+	
 		$("abbr a").on("click" , function(e){
 		  e.preventDefault();
 		  $("body , html").animate({
